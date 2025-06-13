@@ -1,0 +1,6 @@
+.vs
+.idea
+bin
+obj
+Migrations
+appsettings.Development.json
