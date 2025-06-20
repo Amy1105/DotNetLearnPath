@@ -8,13 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AlgorithmDemo\**" />
     <Compile Remove="DesignPatterns\**" />
+    <EmbeddedResource Remove="AlgorithmDemo\**" />
     <EmbeddedResource Remove="DesignPatterns\**" />
+    <None Remove="AlgorithmDemo\**" />
     <None Remove="DesignPatterns\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AlgorithmDemo\" />
     <Folder Include="DataStructures\" />
   </ItemGroup>
 
