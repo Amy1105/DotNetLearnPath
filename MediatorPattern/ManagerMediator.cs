@@ -1,9 +1,9 @@
 ﻿
 class ManagerMediator : Mediator
 {
-    public Colleague Customer { get; set; }
-    public Colleague Programmer { get; set; }
-    public Colleague Tester { get; set; }
+    public Customer Customer { get; set; }
+    public Programmer Programmer { get; set; }
+    public Tester Tester { get; set; }
 
     public override void Send(string message, Colleague colleague)
     {

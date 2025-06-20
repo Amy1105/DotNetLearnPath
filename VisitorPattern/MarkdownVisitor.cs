@@ -16,5 +16,5 @@ public class MarkdownVisitor : IDocumentVisitor
         => _output.AppendLine($"![image]({image.FilePath})");
 
     public void VisitTable(TableElement table)
-        => _output.AppendLine($"| {'|'.Repeat(table.Columns)}\n{'-'.Repeat(table.Columns * 2 + 1)}");
+        => _output.AppendLine($"| {new string('|', table.Columns)}\n{new string('-', table.Columns*2+1) }");
 }
