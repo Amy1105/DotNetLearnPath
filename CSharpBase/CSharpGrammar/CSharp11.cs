@@ -37,7 +37,7 @@ namespace CSharpBase.CSharpGrammar
 
         #region 3.泛型属性
 
-        [ValidateType<string>()]
+        //[ValidateType<string>()]
         public string Method() => "return value";
 
         #endregion
