@@ -7,9 +7,9 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace AutoMapperDemo.Models
+namespace AutoMapperDemo.Profiles
 {
-    public class User
+    public class UserDto
     {
 
         /// <summary>
