@@ -32,6 +32,10 @@ namespace Acme.BookStore.Books
 
         public Task<BookDto> CreateAsync(CreateBookDto input)
         {
+            //找一下书是否已经存在
+
+            //映射保存
+
             throw new NotImplementedException();
         }
 

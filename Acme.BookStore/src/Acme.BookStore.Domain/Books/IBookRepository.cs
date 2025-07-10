@@ -9,7 +9,7 @@ namespace Acme.BookStore.Books
 {
     public interface IBookRepository :  IRepository<Book, Guid>
     {
-        Task<Book> GetByISBNAsync(string isbn);
+        Task<Book> GetAsync(string isbn);
         Task<List<Book>> GetListByCategoryAsync(Guid categoryId, int skipCount = 0, int maxResultCount = int.MaxValue);
         Task<List<Book>> GetPopularBooksAsync(int count = 10);
     }

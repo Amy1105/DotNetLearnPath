@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
@@ -18,11 +19,11 @@ namespace Acme.BookStore.Repositories.Books
         {
         }
 
-        public async Task<Book> GetByISBNAsync(string isbn)
+        public async Task<Book?> GetAsync(Expression<Func<Book,bool>> predicate)
         {
             var dbContext = await GetDbContextAsync();
-            return await dbContext.Books.FirstOrDefaultAsync(b => b.ISBN == isbn);
-        }
+            return await dbContext.Books.FirstOrDefaultAsync(predicate, cancellationToken:default);
+        }      
 
         public async Task<List<Book>> GetListByCategoryAsync(Guid categoryId, int skipCount = 0, int maxResultCount = int.MaxValue)
         {
