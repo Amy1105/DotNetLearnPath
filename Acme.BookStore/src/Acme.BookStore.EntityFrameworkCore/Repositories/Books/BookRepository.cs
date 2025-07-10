@@ -18,11 +18,26 @@ namespace Acme.BookStore.Repositories.Books
         {
         }
 
-        public async Task<List<Book>> GetListAsync(bool includeCategory = false)
+        public async Task<Book> GetByISBNAsync(string isbn)
         {
             var dbContext = await GetDbContextAsync();
-            var query = dbContext.Books;
-            return await query.ToListAsync();
+            return await dbContext.Books.FirstOrDefaultAsync(b => b.ISBN == isbn);
+        }
+
+        public async Task<List<Book>> GetListByCategoryAsync(Guid categoryId, int skipCount = 0, int maxResultCount = int.MaxValue)
+        {
+            var dbContext = await GetDbContextAsync();
+            return await dbContext.Books
+                .Where(b => b.CategoryId == categoryId)
+                .OrderByDescending(b => b.CreationTime)
+                .Skip(skipCount)
+                .Take(maxResultCount)
+                .ToListAsync();
+        }
+
+        public Task<List<Book>> GetPopularBooksAsync(int count = 10)
+        {
+            throw new NotImplementedException();
         }
     }
 }
