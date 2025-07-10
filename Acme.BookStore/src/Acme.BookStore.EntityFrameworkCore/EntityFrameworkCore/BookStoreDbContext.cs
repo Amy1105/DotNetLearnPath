@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Acme.BookStore.Authors;
+using Acme.BookStore.Books;
+using Acme.BookStore.Categorys;
+using Acme.BookStore.Orders;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -26,6 +30,17 @@ public class BookStoreDbContext :
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
     #region Entities from the modules
+
+    public DbSet<Author> Authors { get; set; }
+
+    public DbSet<Book> Books { get; set; }
+
+    public DbSet<BookReview>  BookReviews { get; set; }
+
+    public DbSet<Order>  Orders { get; set; }
+
+    public DbSet<OrderItem>  OrderItems { get; set; }
+    public DbSet<Category> Categories { get; set; }
 
     /* Notice: We only implemented IIdentityDbContext and ITenantManagementDbContext
      * and replaced them for this DbContext. This allows you to perform JOIN
