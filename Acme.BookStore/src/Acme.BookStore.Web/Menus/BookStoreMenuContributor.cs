@@ -48,8 +48,20 @@ public class BookStoreMenuContributor : IMenuContributor
                 "~/",
                 icon: "fas fa-home",
                 order: 0
-            )
-        );
+            ) );
+
+        context.Menu.AddItem(
+           new ApplicationMenuItem(
+               "BookStore",
+               l["Menu:BookManagement"],
+               icon: "fas fa-shopping-cart"
+           ).AddItem(
+               new ApplicationMenuItem(
+                   "BookManagement.Books",
+                   l["Menu:Books"],
+                   url: "/Books"
+               )
+           ));
 
         if (MultiTenancyConsts.IsEnabled)
         {

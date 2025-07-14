@@ -1,0 +1,45 @@
+using Acme.BookStore.Books;
+using Acme.BookStore.IService;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Acme.BookStore.Web.Pages.Books
+{
+    public class EditBookModalModel : BookStorePageModel
+    {
+        public SelectListItem[] Categories { get; set; }
+
+        public SelectListItem[] Authors { get; set; }
+
+
+        [BindProperty]
+        public CreateEditBookViewModel Book { get; set; }
+
+
+        private readonly ICategoryService categoryService;
+        private readonly IAuthorService authorService;
+        private readonly IBookService bookService;
+        public EditBookModalModel(IAuthorService _authorService, IBookService _bookService, ICategoryService _categoryService)
+        {
+            bookService = _bookService;
+            categoryService = _categoryService;
+            authorService = _authorService;
+        }
+        public async Task OnGet()
+        {
+            Book = new CreateEditBookViewModel
+            {
+                Status = BookStatus.Draft
+            };
+
+            var categoryLookup = await categoryService.GetListAsync();
+            Categories = categoryLookup.Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToArray();
+
+            var authorLookup = await authorService.GetListAsync();
+            Authors = authorLookup.Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToArray();
+        }
+    }
+}

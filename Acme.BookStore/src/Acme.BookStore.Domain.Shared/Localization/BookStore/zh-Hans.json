@@ -4,6 +4,14 @@
     "AppName": "BookStore",
     "Menu:Home": "首页",
     "Welcome": "欢迎",
-    "LongWelcomeMessage": "欢迎使用本应用程序。这是一个基于 ABP 框架的启动项目。更多信息，请访问 abp.io。"
+    "LongWelcomeMessage": "欢迎使用本应用程序。这是一个基于 ABP 框架的启动项目。更多信息，请访问 abp.io。",
+    "ProductDeletionConfirmationMessage": "您确定要删除【{0}】吗？",
+    "SuccessfullyDeleted": "删除成功!",
+    "NewBook": "添加新书",
+    "StockState": "状态",
+    "Enum:StockState:0": "草稿",
+    "Enum:StockState:1": "已发布",
+    "Enum:StockState:2": "缺货",
+    "Enum:StockState:3": "已停售"
   }
 }

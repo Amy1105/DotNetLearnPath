@@ -1,6 +1,4 @@
-﻿using Acme.BookStore.Books;
-using Acme.BookStore.Categorys;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +6,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
-using Acme.BookStore.Authors;
+using Acme.BookStore.Models;
 namespace Acme.BookStore.Data
 {
     internal class BookStoreDataSeedContributor : IDataSeedContributor, ITransientDependency
