@@ -18,11 +18,22 @@ namespace Acme.BookStore.Repositories.Authors
         {
         }
 
+        public async Task<Author> GetByNameAsync(string name)
+        {
+            var dbContext = await GetDbContextAsync();
+            return await dbContext.Authors.Where(x => x.Name.Contains(name)).FirstOrDefaultAsync();
+        }
+
         public async Task<List<Author>> GetListAsync(bool includeCategory = false)
         {
             var dbContext = await GetDbContextAsync();
             var query = dbContext.Authors;
             return await query.ToListAsync();
+        }
+
+        public Task<List<Author>> GetListWithMostBooksAsync(int count = 10)
+        {
+            throw new NotImplementedException();
         }
     }
 }

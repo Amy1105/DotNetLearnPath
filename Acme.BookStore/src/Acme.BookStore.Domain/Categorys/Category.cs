@@ -44,41 +44,41 @@ namespace Acme.BookStore.Categorys
         /// </summary>
         public string Description { get; private set; }
 
-        //private Category() { }
+        private Category() { }
 
-        //public static Category Create(
-        //    Guid id,
-        //    string name,
-        //    Guid? parentId = null,
-        //    string description = null)
-        //{
-        //    Check.NotNullOrWhiteSpace(name, nameof(name));
+        public static Category Create(
+            Guid id,
+            string name,
+            Guid? parentId = null,
+            string description = null)
+        {
+            Check.NotNullOrWhiteSpace(name, nameof(name));
 
-        //    var category = new Category
-        //    {
-        //        Id = id,
-        //        Name = name,
-        //        ParentId = parentId,
-        //        Description = description,
-        //        Children = new List<Category>(),
-        //        Books = new List<Book>()
-        //    };
+            var category = new Category
+            {
+                Id = id,
+                Name = name,
+                ParentId = parentId,
+                Description = description,
+                Children = new List<Category>(),
+                Books = new List<Book>()
+            };
 
-        //    return category;
-        //}
+            return category;
+        }
 
-        //public void UpdateInfo(string name, string description = null)
-        //{
-        //    Check.NotNullOrWhiteSpace(name, nameof(name));
+        public void UpdateInfo(string name, string description = null)
+        {
+            Check.NotNullOrWhiteSpace(name, nameof(name));
 
-        //    Name = name;
-        //    Description = description;
-        //}
+            Name = name;
+            Description = description;
+        }
 
-        //public void SetParent(Category parent)
-        //{
-        //    ParentId = parent?.Id;
-        //    Parent = parent;
-        //}
+        public void SetParent(Category parent)
+        {
+            ParentId = parent?.Id;
+            Parent = parent;
+        }
     }
 }

@@ -52,11 +52,7 @@ namespace Acme.BookStore.Books
 
         public async Task<PagedResultDto<BookDto>> GetListAsync(GetBookListDto input)
         {
-            var books = await _bookRepository.GetListAsync(
-                sorting: input.Sorting,
-                skipCount: input.SkipCount,
-                maxResultCount: input.MaxResultCount
-            );
+            var books = await _bookRepository.GetListAsync();
 
             var totalCount = await _bookRepository.GetCountAsync();
 

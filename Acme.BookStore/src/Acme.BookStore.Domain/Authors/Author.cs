@@ -1,10 +1,14 @@
 ﻿using Acme.BookStore.Books;
+using Acme.BookStore.Categorys;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using Volo.Abp;
 using Volo.Abp.Domain.Entities.Auditing;
+using Volo.Abp.Json.SystemTextJson.JsonConverters;
 
 namespace Acme.BookStore.Authors
 {
@@ -22,7 +26,7 @@ namespace Acme.BookStore.Authors
         /// <summary>
         /// 出生日期
         /// </summary>
-        public DateTime BirthDate { get; private set; }
+        public DateOnly BirthDate { get; private set; }
 
         /// <summary>
         /// 简介
@@ -37,6 +41,27 @@ namespace Acme.BookStore.Authors
         /// <summary>
         /// 该作者的书籍集合
         /// </summary>
-        public virtual ICollection<Book> Books { get; private set; }      
+        public virtual ICollection<Book> Books { get; private set; }
+
+
+        public Author()
+        {
+                
+        }
+        public static Author Create(Guid id,string Name,DateOnly BirthDate,string Biography,string PhotoUrl)
+        {
+            Check.NotNullOrWhiteSpace(Name, nameof(Name));
+             Author author = new Author()
+            {
+                 Id = id,
+                 Name = Name,
+                BirthDate = BirthDate,
+                Biography = Biography,
+                PhotoUrl = PhotoUrl
+
+            };
+            return author;
+        }      
+
     }
 }

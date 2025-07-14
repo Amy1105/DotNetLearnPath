@@ -23,7 +23,12 @@ namespace Acme.BookStore.Repositories.Books
         {
             var dbContext = await GetDbContextAsync();
             return await dbContext.Books.FirstOrDefaultAsync(predicate, cancellationToken:default);
-        }      
+        }
+
+        public Task<Book> GetAsync(string isbn)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<List<Book>> GetListByCategoryAsync(Guid categoryId, int skipCount = 0, int maxResultCount = int.MaxValue)
         {
