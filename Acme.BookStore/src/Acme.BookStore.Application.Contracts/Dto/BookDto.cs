@@ -17,12 +17,6 @@ namespace Acme.BookStore.Dto
         public string CoverImageUrl { get; set; }
         public DateTime CreationTime { get; set; }
     }
-    public class GetBookListDto
-    {
-        public string Sorting { get; set; }
-        public int SkipCount { get; set; }
-        public int MaxResultCount { get; set; }
-    }
 
     public class CreateBookDto
     {
@@ -50,6 +44,16 @@ namespace Acme.BookStore.Dto
 
         public string CoverImageUrl { get; set; }
     }
+
+
+    public class GetBookListDto
+    {
+        public string Sorting { get; set; }
+        public int SkipCount { get; set; }
+        public int MaxResultCount { get; set; }
+    }
+
+    
 
     public class UpdateBookDto
     {

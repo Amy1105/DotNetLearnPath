@@ -1,8 +1,9 @@
 using Acme.BookStore.Books;
+using Acme.BookStore.Dto;
 using Acme.BookStore.IService;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,8 +16,12 @@ namespace Acme.BookStore.Web.Pages.Books
         public SelectListItem[] Authors { get; set; }
 
 
+        [HiddenInput]
+        [BindProperty(SupportsGet = true)]
+        public Guid Id { get; set; }
+
         [BindProperty]
-        public CreateEditBookViewModel Book { get; set; }
+        public CreateBookViewModel Book { get; set; }
 
 
         private readonly ICategoryService categoryService;
@@ -30,7 +35,7 @@ namespace Acme.BookStore.Web.Pages.Books
         }
         public async Task OnGet()
         {
-            Book = new CreateEditBookViewModel
+            Book = new CreateBookViewModel
             {
                 Status = BookStatus.Draft
             };
@@ -40,6 +45,9 @@ namespace Acme.BookStore.Web.Pages.Books
 
             var authorLookup = await authorService.GetListAsync();
             Authors = authorLookup.Select(x => new SelectListItem(x.Name, x.Id.ToString())).ToArray();
+
+            var bookDto = await bookService.GetAsync(Id);          
+            Book = ObjectMapper.Map<BookDto, CreateBookViewModel>(bookDto);           
         }
-    }
+    }    
 }

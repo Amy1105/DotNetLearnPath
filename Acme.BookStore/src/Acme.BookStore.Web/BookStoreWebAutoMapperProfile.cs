@@ -10,6 +10,6 @@ public class BookStoreWebAutoMapperProfile : Profile
     {
         //Define your AutoMapper configuration here for the Web project.
 
-        CreateMap<CreateEditBookViewModel, CreateBookDto>();
+        CreateMap<CreateBookViewModel, CreateBookDto>();
     }
 }

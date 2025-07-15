@@ -15,7 +15,7 @@ namespace Acme.BookStore.Web.Pages.Books
         public SelectListItem[] Authors { get; set; }
 
         [BindProperty]
-        public CreateEditBookViewModel Book { get; set; }
+        public CreateBookViewModel Book { get; set; }
 
         private readonly ICategoryService categoryService;
         private readonly IAuthorService authorService;
@@ -33,7 +33,7 @@ namespace Acme.BookStore.Web.Pages.Books
         /// <returns></returns>
         public async Task OnGetAsync()
         {
-            Book = new CreateEditBookViewModel
+            Book = new CreateBookViewModel
             {           
                 Status = BookStatus.Draft
             };
@@ -47,8 +47,8 @@ namespace Acme.BookStore.Web.Pages.Books
 
         public async Task<IActionResult> OnPostAsync()
         {
-            var productDto = ObjectMapper.Map<CreateEditBookViewModel, CreateBookDto>(Book);
-            var result = await bookService.CreateAsync(productDto);
+            var bookDto = ObjectMapper.Map<CreateBookViewModel, CreateBookDto>(Book);
+            var result = await bookService.CreateAsync(bookDto);
            if(!result)
             {
                 return Content(L["BOOKExists"]);

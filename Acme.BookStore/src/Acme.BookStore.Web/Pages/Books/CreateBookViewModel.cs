@@ -6,7 +6,7 @@ using Acme.BookStore.Books;
 
 namespace Acme.BookStore.Web.Pages.Books
 {
-    public class CreateEditBookViewModel
+    public class CreateBookViewModel
     {
         [SelectItems("Categories")]
         [DisplayName("Category")]
@@ -31,4 +31,5 @@ namespace Acme.BookStore.Web.Pages.Books
 
 
     }
+ 
 }
