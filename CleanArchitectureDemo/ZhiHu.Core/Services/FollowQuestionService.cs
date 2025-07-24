@@ -11,6 +11,10 @@ using ZhiHu.SharedKernel.Result;
 
 namespace ZhiHu.Core.Services
 {
+    /// <summary>
+    /// 领域服务：可以跨领域实体
+    /// </summary>
+    /// <param name="questions"></param>
     public class FollowQuestionService(IReadRepository<Question> questions) : IFollowQuestionService
     {
         public async Task<IResult> FollowAsync(AppUser appuser, int questionId, CancellationToken cancellationToken)
