@@ -18,7 +18,7 @@ namespace ZhiHu.UseCases.ProductClasses.Queries
                 .Select(u => new ProductClassDto
                 {
                     Id = u.Id,
-                    ProductClassName = u.ProductClassName,
+                    ProductClassName = u.Name,
                     Code = u.Code,
                     Remark = u.Remark,                  
                 });

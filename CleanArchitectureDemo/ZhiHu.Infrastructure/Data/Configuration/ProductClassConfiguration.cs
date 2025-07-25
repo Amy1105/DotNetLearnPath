@@ -9,7 +9,7 @@ namespace ZhiHu.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<ProductClass> builder)
         {
-            builder.Property(p => p.ProductClassName)
+            builder.Property(p => p.Name)
                 .HasMaxLength(DataSchemaConstants.DefaultMaxLength100)
                 .IsRequired();
 

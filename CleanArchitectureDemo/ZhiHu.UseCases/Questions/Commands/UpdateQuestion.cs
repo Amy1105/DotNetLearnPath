@@ -1,10 +1,5 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ZhiHu.Core.Data;
 using ZhiHu.Core.QuestionAggregate.Entites;
 using ZhiHu.Core.QuestionAggregate.Specifications;

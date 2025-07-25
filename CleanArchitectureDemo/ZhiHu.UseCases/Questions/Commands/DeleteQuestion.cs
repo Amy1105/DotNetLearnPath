@@ -31,13 +31,9 @@ namespace ZhiHu.UseCases.Questions.Commands
             var spec = new QuestionWithAnswerByCreatedBy(user.Id.Value, request.Id);
             var question = await questions.GetSingleOrDefaultAsync(spec, cancellationToken);
             if (question == null) return Result.NotFound("问题不存在");
-
             if (question.Answers.Count != 0) return Result.Failure("问题下有回答，不能删除");
-
             questions.Delete(question);
-
             await questions.SaveChangesAsync(cancellationToken);
-
             return Result.Success();
         }
     }
