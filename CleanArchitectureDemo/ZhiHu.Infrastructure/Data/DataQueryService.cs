@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZhiHu.Core.AppUserAggregate.Entites;
+using ZhiHu.Core.ProductClassAggregate.Entites;
 using ZhiHu.Core.QuestionAggregate.Entites;
 using ZhiHu.UseCases.Common.Interfaces;
 
@@ -23,6 +24,8 @@ namespace ZhiHu.Infrastructure.Data
         public IQueryable<Answer> Answers => dbContext.Answers;
 
         public IQueryable<AnswerLike> AnswerLikes => dbContext.AnswerLikes;
+
+        public IQueryable<ProductClass> ProductClasses => dbContext.ProductClasses;
 
         public async Task<T?> FirstOrDefaultAsync<T>(IQueryable<T> queryable) where T : class
         {

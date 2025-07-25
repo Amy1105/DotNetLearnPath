@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZhiHu.Core.AppUserAggregate.Entites;
 using ZhiHu.Core.QuestionAggregate.Entites;
+using ZhiHu.Core.ProductClassAggregate.Entites;
 
 namespace ZhiHu.Infrastructure.Data
 {
@@ -25,6 +26,10 @@ namespace ZhiHu.Infrastructure.Data
         public DbSet<FollowUser> FollowUsers => Set<FollowUser>();
 
         public DbSet<FollowQuestion> FollowQuestions => Set<FollowQuestion>();
+
+        public DbSet<ProductClass> ProductClasses => Set<ProductClass>();
+
+        public DbSet<ProductClassDetail> ProductClassesDetail => Set<ProductClassDetail>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
