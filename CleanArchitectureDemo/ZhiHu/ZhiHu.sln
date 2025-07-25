@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhiHu", "ZhiHu.csproj", "{3B423DFE-9D5D-45C5-9E1A-72CE83D0DB0E}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhiHu.SharedKernel", "..\ZhiHu.SharedKernel\ZhiHu.SharedKernel.csproj", "{F3B5399D-7D82-4470-B4D3-7D5C0A971A58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhiHu.UseCases", "..\ZhiHu.UseCases\ZhiHu.UseCases.csproj", "{A0BDD78D-E240-4CD4-99B7-A02B8FA298D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2C428969-42AA-4E2C-94E8-8EAF7E431332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestZhiHu", "..\TestZhiHu\TestZhiHu.csproj", "{75ACE82D-8D83-4B17-A8FB-7341899BE2F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +43,15 @@ Global
 		{A0BDD78D-E240-4CD4-99B7-A02B8FA298D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0BDD78D-E240-4CD4-99B7-A02B8FA298D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0BDD78D-E240-4CD4-99B7-A02B8FA298D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75ACE82D-8D83-4B17-A8FB-7341899BE2F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75ACE82D-8D83-4B17-A8FB-7341899BE2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75ACE82D-8D83-4B17-A8FB-7341899BE2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75ACE82D-8D83-4B17-A8FB-7341899BE2F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75ACE82D-8D83-4B17-A8FB-7341899BE2F3} = {2C428969-42AA-4E2C-94E8-8EAF7E431332}
 	EndGlobalSection
 EndGlobal
