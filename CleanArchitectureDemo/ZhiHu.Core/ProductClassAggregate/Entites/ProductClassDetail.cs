@@ -7,10 +7,7 @@ namespace ZhiHu.Core.ProductClassAggregate.Entites
         protected ProductClassDetail()
         {
 
-        }
-     
-        public int ProductClassDetailId { get; set; }
-
+        }     
 
         /// <summary>
         /// ProductClassId
