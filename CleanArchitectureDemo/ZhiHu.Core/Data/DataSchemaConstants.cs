@@ -15,5 +15,9 @@ namespace ZhiHu.Core.Data
         public const int DefaultAppUserNickNameLength = 20;
 
         public const int DefaultAppUserBioLength = 200;
+
+        public const int DefaultMaxLength100 = 100;
+
+        public const int DefaultMaxLength500 = 500;
     }
 }

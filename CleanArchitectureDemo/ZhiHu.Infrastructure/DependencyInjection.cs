@@ -14,6 +14,18 @@ using ZhiHu.UseCases.Common.Interfaces;
 
 namespace ZhiHu.Infrastructure
 {
+    /// <summary>
+    /// Infrastructure 类库（基础设施层） 主要负责处理与系统外部环境的交互，
+    /// 为核心业务逻辑（领域层、用例层）提供技术支持，同时隔离外部依赖对核心层的影响
+    /// 
+    /// **隔离外部依赖，提供技术实现**
+    /// 
+    /// Data：
+    ///     与EFcore 对接
+    ///         efcore实体配置、efcoreInterceptors拦截器允许截获、修改和/或抑制 EF Core 操作、公共仓储、规范查询模式、
+    ///     与IdentityServer4对接
+    /// 
+    /// </summary>
     public static class DependencyInjection
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services,

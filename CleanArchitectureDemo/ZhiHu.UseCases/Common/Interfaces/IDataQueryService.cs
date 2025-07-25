@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZhiHu.Core.AppUserAggregate.Entites;
+using ZhiHu.Core.ProductClassAggregate.Entites;
 using ZhiHu.Core.QuestionAggregate.Entites;
 
 namespace ZhiHu.UseCases.Common.Interfaces
@@ -27,5 +28,7 @@ namespace ZhiHu.UseCases.Common.Interfaces
         Task<IList<T>> ToListAsync<T>(IQueryable<T> queryable) where T : class;
 
         Task<bool> AnyAsync<T>(IQueryable<T> queryable) where T : class;
+
+        public IQueryable<ProductClass> ProductClasses { get; } 
     }
 }
