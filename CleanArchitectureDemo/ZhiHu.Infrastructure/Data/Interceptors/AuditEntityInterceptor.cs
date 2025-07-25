@@ -1,12 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using ZhiHu.Core.Common;
-using Microsoft.AspNet.Identity;
+using ZhiHu.UseCases.Common.Interfaces;
 
 namespace ZhiHu.Infrastructure.Data.Interceptors
 {
@@ -50,9 +45,9 @@ namespace ZhiHu.Infrastructure.Data.Interceptors
                 if (currentUser.Id is null) continue;
 
                 if (entry.State == EntityState.Added)
-                    entry.Entity.CreatedBy =int.Parse(currentUser.Id);
+                    entry.Entity.CreatedBy =currentUser.Id.Value;
                 else
-                    entry.Entity.LastModifiedBy =int.Parse(currentUser.Id);
+                    entry.Entity.LastModifiedBy =currentUser.Id.Value;
             }
         }
     }

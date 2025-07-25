@@ -1,13 +1,8 @@
 ﻿using MediatR;
-using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using ZhiHu.UseCases.Common.Attributes;
 using ZhiHu.UseCases.Common.Exceptions;
+using ZhiHu.UseCases.Common.Interfaces;
 
 namespace ZhiHu.UseCases.Common.Behaviors
 {

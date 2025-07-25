@@ -1,16 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
-using ZhiHu.Core.AppUserAggregate.Entites;
+﻿using ZhiHu.Core.AppUserAggregate.Entites;
 using ZhiHu.Core.AppUserAggregate.Specifications;
 using ZhiHu.Core.Interfaces;
 using ZhiHu.SharedKernel.Messaging;
 using ZhiHu.SharedKernel.Repositoy;
 using ZhiHu.SharedKernel.Result;
+using ZhiHu.UseCases.Common.Attributes;
+using ZhiHu.UseCases.Common.Interfaces;
 
 namespace ZhiHu.UseCases.AppUsers.Commands
 {
@@ -24,7 +19,7 @@ namespace ZhiHu.UseCases.AppUsers.Commands
     {
         public async Task<IResult> Handle(CreateFollowQuestionCommand request, CancellationToken cancellationToken)
         {
-            var spec = new FollowQuestionByIdSpec(int.Parse(user.Id), request.QuestionId);
+            var spec = new FollowQuestionByIdSpec(user.Id.Value, request.QuestionId);
             var appuser = await userRepo.GetSingleOrDefaultAsync(spec, cancellationToken);
             if (appuser == null) return Result.NotFound("用户不存在");
 
